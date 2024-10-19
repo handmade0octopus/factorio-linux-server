@@ -1,8 +1,0 @@
-[Unit]
-Description=Factorio Update Service
-Wants=network-online.target
-After=network-online.target
-
-[Service]
-Type=oneshot
-ExecStart=/usr/local/bin/factorio-update.sh

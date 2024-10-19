@@ -1,3 +1,7 @@
 .history
+.vscode
+service
 server
-factorio.tar.xz
+*.tar.xz
+*.log
+config.sh

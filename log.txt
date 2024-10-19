@@ -1,0 +1,268 @@
+   0.000 2024-10-19 17:37:07; Factorio 1.1.26 (build 58172, linux64, headless)
+   0.010 Operating system: Linux (Ubuntu 24.04)
+   0.010 Program arguments: "/home/factorio/factorio-linux-server/server/factorio/bin/x64/factorio" "--port" "21377" "--start-server" "/home/factorio/factorio-linux-server/server/factorio/data/saves/NEWONE.zip" "--server-settings" "/home/factorio/factorio-linux-server/server/factorio/data/server-settings.json" 
+   0.010 Read data path: /home/factorio/factorio-linux-server/server/factorio/data
+   0.010 Write data path: /home/factorio/factorio-linux-server/server/factorio [638/973MB]
+   0.010 Binaries path: /home/factorio/factorio-linux-server/server/factorio/bin
+   0.015 System info: [CPU: Intel(R) Xeon(R) CPU E3-1270 v6 @ 3.80GHz, 6 cores, RAM: 23932 MB]
+   0.015 Environment: DISPLAY=:0 WAYLAND_DISPLAY=<unset> DESKTOP_SESSION=<unset> XDG_SESSION_DESKTOP=<unset> XDG_CURRENT_DESKTOP=Unity __GL_FSAA_MODE=<unset> __GL_LOG_MAX_ANISO=<unset> __GL_SYNC_TO_VBLANK=<unset> __GL_SORT_FBCONFIGS=<unset> __GL_YIELD=<unset>
+   0.015 Running in headless mode
+   0.029 Loading mod core 0.0.0 (data.lua)
+   0.087 Loading mod base 1.1.26 (data.lua)
+   0.362 Loading mod base 1.1.26 (data-updates.lua)
+   0.483 Checksum for core: 217331212
+   0.483 Checksum of base: 3777792092
+   0.677 Prototype list checksum: 3034860339
+   0.726 Info PlayerData.cpp:71: Local player-data.json available, timestamp 1729351975
+   0.726 Info PlayerData.cpp:78: Cloud player-data.json unavailable
+   0.728 Factorio initialised
+   0.729 Info ServerSynchronizer.cpp:29: nextHeartbeatSequenceNumber(0) initialized Synchronizer nextTickClosureTick(0).
+   0.729 Info ServerMultiplayerManager.cpp:780: updateTick(4294967295) changing state from(Ready) to(PreparedToHostGame)
+   0.729 Info ServerMultiplayerManager.cpp:780: updateTick(4294967295) changing state from(PreparedToHostGame) to(CreatingGame)
+   0.729 Loading map /home/factorio/factorio-linux-server/server/factorio/data/saves/NEWONE.zip: 788284 bytes.
+   0.745 Loading level.dat: 1441907 bytes.
+   0.749 Info Scenario.cpp:197: Map version 1.1.26-0
+   0.783 Loading script.dat: 398 bytes.
+   0.785 Checksum for script /home/factorio/factorio-linux-server/server/factorio/temp/currently-playing/control.lua: 1735894310
+   0.786 Info UDPSocket.cpp:27: Opening socket at (IP ADDR:({0.0.0.0:21377}))
+   0.786 Hosting game at IP ADDR:({0.0.0.0:21377})
+   0.786 Info ServerMultiplayerManager.cpp:780: updateTick(692) changing state from(CreatingGame) to(InGame)
+   0.786 Info UDPSocket.cpp:39: Opening socket for broadcast
+   0.786 Info CommandLineMultiplayer.cpp:278: Maximum segment size = 100; minimum segment size = 25; maximum-segment-size peer count = 10; minimum-segment-size peer count = 20
+   0.000 2024-10-19 17:37:34; Factorio 1.1.26 (build 58172, linux64, headless)
+   0.009 Operating system: Linux (Ubuntu 24.04)
+   0.009 Program arguments: "/home/factorio/factorio-linux-server/server/factorio/bin/x64/factorio" "--port" "21377" "--start-server" "/home/factorio/factorio-linux-server/server/factorio/data/saves/NEWONE.zip" "--server-settings" "/home/factorio/factorio-linux-server/factorio/data/server-settings.json" 
+   0.009 Read data path: /home/factorio/factorio-linux-server/server/factorio/data
+   0.009 Write data path: /home/factorio/factorio-linux-server/server/factorio [638/973MB]
+   0.009 Binaries path: /home/factorio/factorio-linux-server/server/factorio/bin
+   0.018 System info: [CPU: Intel(R) Xeon(R) CPU E3-1270 v6 @ 3.80GHz, 6 cores, RAM: 24032 MB]
+   0.018 Environment: DISPLAY=<unset> WAYLAND_DISPLAY=<unset> DESKTOP_SESSION=<unset> XDG_SESSION_DESKTOP=<unset> XDG_CURRENT_DESKTOP=<unset> __GL_FSAA_MODE=<unset> __GL_LOG_MAX_ANISO=<unset> __GL_SYNC_TO_VBLANK=<unset> __GL_SORT_FBCONFIGS=<unset> __GL_YIELD=<unset>
+   0.018 Running in headless mode
+   0.032 Loading mod core 0.0.0 (data.lua)
+   0.101 Loading mod base 1.1.26 (data.lua)
+   0.412 Loading mod base 1.1.26 (data-updates.lua)
+   0.546 Checksum for core: 217331212
+   0.546 Checksum of base: 3777792092
+   0.723 Prototype list checksum: 3034860339
+   0.777 Info PlayerData.cpp:71: Local player-data.json available, timestamp 1729352234
+   0.777 Info PlayerData.cpp:78: Cloud player-data.json unavailable
+   0.780 Factorio initialised
+   0.780 Error CommandLineMultiplayer.cpp:346: Hosting multiplayer game failed: filesystem error: file_size(p): unknown error: No such file or directory [/home/factorio/factorio-linux-server/factorio/data/server-settings.json]
+   0.783 Info ServerMultiplayerManager.cpp:140: Quitting multiplayer connection.
+   0.783 Info ServerMultiplayerManager.cpp:780: updateTick(4294967295) changing state from(Ready) to(Closed)
+   0.820 Goodbye
+   0.000 2024-10-19 17:37:36; Factorio 1.1.26 (build 58172, linux64, headless)
+   0.009 Operating system: Linux (Ubuntu 24.04)
+   0.009 Program arguments: "/home/factorio/factorio-linux-server/server/factorio/bin/x64/factorio" "--port" "21377" "--start-server" "/home/factorio/factorio-linux-server/server/factorio/data/saves/NEWONE.zip" "--server-settings" "/home/factorio/factorio-linux-server/factorio/data/server-settings.json" 
+   0.009 Read data path: /home/factorio/factorio-linux-server/server/factorio/data
+   0.009 Write data path: /home/factorio/factorio-linux-server/server/factorio [638/973MB]
+   0.009 Binaries path: /home/factorio/factorio-linux-server/server/factorio/bin
+   0.018 System info: [CPU: Intel(R) Xeon(R) CPU E3-1270 v6 @ 3.80GHz, 6 cores, RAM: 24032 MB]
+   0.018 Environment: DISPLAY=<unset> WAYLAND_DISPLAY=<unset> DESKTOP_SESSION=<unset> XDG_SESSION_DESKTOP=<unset> XDG_CURRENT_DESKTOP=<unset> __GL_FSAA_MODE=<unset> __GL_LOG_MAX_ANISO=<unset> __GL_SYNC_TO_VBLANK=<unset> __GL_SORT_FBCONFIGS=<unset> __GL_YIELD=<unset>
+   0.018 Running in headless mode
+   0.032 Loading mod core 0.0.0 (data.lua)
+   0.086 Loading mod base 1.1.26 (data.lua)
+   0.357 Loading mod base 1.1.26 (data-updates.lua)
+   0.495 Checksum for core: 217331212
+   0.495 Checksum of base: 3777792092
+   0.698 Prototype list checksum: 3034860339
+   0.754 Info PlayerData.cpp:71: Local player-data.json available, timestamp 1729352255
+   0.754 Info PlayerData.cpp:78: Cloud player-data.json unavailable
+   0.757 Factorio initialised
+   0.757 Error CommandLineMultiplayer.cpp:346: Hosting multiplayer game failed: filesystem error: file_size(p): unknown error: No such file or directory [/home/factorio/factorio-linux-server/factorio/data/server-settings.json]
+   0.761 Info ServerMultiplayerManager.cpp:140: Quitting multiplayer connection.
+   0.761 Info ServerMultiplayerManager.cpp:780: updateTick(4294967295) changing state from(Ready) to(Closed)
+   0.793 Goodbye
+   0.000 2024-10-19 17:37:37; Factorio 1.1.26 (build 58172, linux64, headless)
+   0.009 Operating system: Linux (Ubuntu 24.04)
+   0.009 Program arguments: "/home/factorio/factorio-linux-server/server/factorio/bin/x64/factorio" "--port" "21377" "--start-server" "/home/factorio/factorio-linux-server/server/factorio/data/saves/NEWONE.zip" "--server-settings" "/home/factorio/factorio-linux-server/factorio/data/server-settings.json" 
+   0.009 Read data path: /home/factorio/factorio-linux-server/server/factorio/data
+   0.009 Write data path: /home/factorio/factorio-linux-server/server/factorio [638/973MB]
+   0.009 Binaries path: /home/factorio/factorio-linux-server/server/factorio/bin
+   0.016 System info: [CPU: Intel(R) Xeon(R) CPU E3-1270 v6 @ 3.80GHz, 6 cores, RAM: 24032 MB]
+   0.016 Environment: DISPLAY=<unset> WAYLAND_DISPLAY=<unset> DESKTOP_SESSION=<unset> XDG_SESSION_DESKTOP=<unset> XDG_CURRENT_DESKTOP=<unset> __GL_FSAA_MODE=<unset> __GL_LOG_MAX_ANISO=<unset> __GL_SYNC_TO_VBLANK=<unset> __GL_SORT_FBCONFIGS=<unset> __GL_YIELD=<unset>
+   0.016 Running in headless mode
+   0.030 Loading mod core 0.0.0 (data.lua)
+   0.114 Loading mod base 1.1.26 (data.lua)
+   0.576 Loading mod base 1.1.26 (data-updates.lua)
+   0.803 Checksum for core: 217331212
+   0.803 Checksum of base: 3777792092
+   1.099 Prototype list checksum: 3034860339
+   1.155 Info PlayerData.cpp:71: Local player-data.json available, timestamp 1729352256
+   1.155 Info PlayerData.cpp:78: Cloud player-data.json unavailable
+   1.158 Factorio initialised
+   1.158 Error CommandLineMultiplayer.cpp:346: Hosting multiplayer game failed: filesystem error: file_size(p): unknown error: No such file or directory [/home/factorio/factorio-linux-server/factorio/data/server-settings.json]
+   1.161 Info ServerMultiplayerManager.cpp:140: Quitting multiplayer connection.
+   1.162 Info ServerMultiplayerManager.cpp:780: updateTick(4294967295) changing state from(Ready) to(Closed)
+   1.198 Goodbye
+   0.000 2024-10-19 17:37:38; Factorio 1.1.26 (build 58172, linux64, headless)
+   0.010 Operating system: Linux (Ubuntu 24.04)
+   0.010 Program arguments: "/home/factorio/factorio-linux-server/server/factorio/bin/x64/factorio" "--port" "21377" "--start-server" "/home/factorio/factorio-linux-server/server/factorio/data/saves/NEWONE.zip" "--server-settings" "/home/factorio/factorio-linux-server/factorio/data/server-settings.json" 
+   0.010 Read data path: /home/factorio/factorio-linux-server/server/factorio/data
+   0.010 Write data path: /home/factorio/factorio-linux-server/server/factorio [638/973MB]
+   0.010 Binaries path: /home/factorio/factorio-linux-server/server/factorio/bin
+   0.018 System info: [CPU: Intel(R) Xeon(R) CPU E3-1270 v6 @ 3.80GHz, 6 cores, RAM: 24032 MB]
+   0.018 Environment: DISPLAY=<unset> WAYLAND_DISPLAY=<unset> DESKTOP_SESSION=<unset> XDG_SESSION_DESKTOP=<unset> XDG_CURRENT_DESKTOP=<unset> __GL_FSAA_MODE=<unset> __GL_LOG_MAX_ANISO=<unset> __GL_SYNC_TO_VBLANK=<unset> __GL_SORT_FBCONFIGS=<unset> __GL_YIELD=<unset>
+   0.018 Running in headless mode
+   0.032 Loading mod core 0.0.0 (data.lua)
+   0.105 Loading mod base 1.1.26 (data.lua)
+   0.423 Loading mod base 1.1.26 (data-updates.lua)
+   0.571 Checksum for core: 217331212
+   0.571 Checksum of base: 3777792092
+   0.750 Prototype list checksum: 3034860339
+   0.801 Info PlayerData.cpp:71: Local player-data.json available, timestamp 1729352258
+   0.801 Info PlayerData.cpp:78: Cloud player-data.json unavailable
+   0.804 Factorio initialised
+   0.805 Error CommandLineMultiplayer.cpp:346: Hosting multiplayer game failed: filesystem error: file_size(p): unknown error: No such file or directory [/home/factorio/factorio-linux-server/factorio/data/server-settings.json]
+   0.808 Info ServerMultiplayerManager.cpp:140: Quitting multiplayer connection.
+   0.808 Info ServerMultiplayerManager.cpp:780: updateTick(4294967295) changing state from(Ready) to(Closed)
+   0.855 Goodbye
+   0.000 2024-10-19 17:37:39; Factorio 1.1.26 (build 58172, linux64, headless)
+   0.012 Operating system: Linux (Ubuntu 24.04)
+   0.012 Program arguments: "/home/factorio/factorio-linux-server/server/factorio/bin/x64/factorio" "--port" "21377" "--start-server" "/home/factorio/factorio-linux-server/server/factorio/data/saves/NEWONE.zip" "--server-settings" "/home/factorio/factorio-linux-server/factorio/data/server-settings.json" 
+   0.012 Read data path: /home/factorio/factorio-linux-server/server/factorio/data
+   0.012 Write data path: /home/factorio/factorio-linux-server/server/factorio [638/973MB]
+   0.012 Binaries path: /home/factorio/factorio-linux-server/server/factorio/bin
+   0.020 System info: [CPU: Intel(R) Xeon(R) CPU E3-1270 v6 @ 3.80GHz, 6 cores, RAM: 24032 MB]
+   0.020 Environment: DISPLAY=<unset> WAYLAND_DISPLAY=<unset> DESKTOP_SESSION=<unset> XDG_SESSION_DESKTOP=<unset> XDG_CURRENT_DESKTOP=<unset> __GL_FSAA_MODE=<unset> __GL_LOG_MAX_ANISO=<unset> __GL_SYNC_TO_VBLANK=<unset> __GL_SORT_FBCONFIGS=<unset> __GL_YIELD=<unset>
+   0.020 Running in headless mode
+   0.034 Loading mod core 0.0.0 (data.lua)
+   0.110 Loading mod base 1.1.26 (data.lua)
+   0.536 Loading mod base 1.1.26 (data-updates.lua)
+   0.678 Checksum for core: 217331212
+   0.678 Checksum of base: 3777792092
+   0.881 Prototype list checksum: 3034860339
+   0.925 Info PlayerData.cpp:71: Local player-data.json available, timestamp 1729352259
+   0.925 Info PlayerData.cpp:78: Cloud player-data.json unavailable
+   0.927 Factorio initialised
+   0.927 Error CommandLineMultiplayer.cpp:346: Hosting multiplayer game failed: filesystem error: file_size(p): unknown error: No such file or directory [/home/factorio/factorio-linux-server/factorio/data/server-settings.json]
+   0.930 Info ServerMultiplayerManager.cpp:140: Quitting multiplayer connection.
+   0.930 Info ServerMultiplayerManager.cpp:780: updateTick(4294967295) changing state from(Ready) to(Closed)
+   0.958 Goodbye
+   0.000 2024-10-19 17:38:41; Factorio 1.1.26 (build 58172, linux64, headless)
+   0.009 Operating system: Linux (Ubuntu 24.04)
+   0.009 Program arguments: "/home/factorio/factorio-linux-server/server/factorio/bin/x64/factorio" "--port" "21377" "--start-server" "/home/factorio/factorio-linux-server/server/factorio/data/saves/NEWONE.zip" "--server-settings" "/home/factorio/factorio-linux-server/server/factorio/data/server-settings.json" 
+   0.009 Read data path: /home/factorio/factorio-linux-server/server/factorio/data
+   0.009 Write data path: /home/factorio/factorio-linux-server/server/factorio [638/973MB]
+   0.009 Binaries path: /home/factorio/factorio-linux-server/server/factorio/bin
+   0.019 System info: [CPU: Intel(R) Xeon(R) CPU E3-1270 v6 @ 3.80GHz, 6 cores, RAM: 23932 MB]
+   0.019 Environment: DISPLAY=<unset> WAYLAND_DISPLAY=<unset> DESKTOP_SESSION=<unset> XDG_SESSION_DESKTOP=<unset> XDG_CURRENT_DESKTOP=<unset> __GL_FSAA_MODE=<unset> __GL_LOG_MAX_ANISO=<unset> __GL_SYNC_TO_VBLANK=<unset> __GL_SORT_FBCONFIGS=<unset> __GL_YIELD=<unset>
+   0.019 Running in headless mode
+   0.032 Loading mod core 0.0.0 (data.lua)
+   0.092 Loading mod base 1.1.26 (data.lua)
+   0.357 Loading mod base 1.1.26 (data-updates.lua)
+   0.496 Checksum for core: 217331212
+   0.496 Checksum of base: 3777792092
+   0.667 Prototype list checksum: 3034860339
+   0.718 Info PlayerData.cpp:71: Local player-data.json available, timestamp 1729352260
+   0.718 Info PlayerData.cpp:78: Cloud player-data.json unavailable
+   0.720 Factorio initialised
+   0.721 Info ServerSynchronizer.cpp:29: nextHeartbeatSequenceNumber(0) initialized Synchronizer nextTickClosureTick(0).
+   0.721 Info ServerMultiplayerManager.cpp:780: updateTick(4294967295) changing state from(Ready) to(PreparedToHostGame)
+   0.721 Info ServerMultiplayerManager.cpp:780: updateTick(4294967295) changing state from(PreparedToHostGame) to(CreatingGame)
+   0.721 Loading map /home/factorio/factorio-linux-server/server/factorio/data/saves/NEWONE.zip: 788284 bytes.
+   0.733 Loading level.dat: 1441907 bytes.
+   0.741 Info Scenario.cpp:197: Map version 1.1.26-0
+   0.773 Loading script.dat: 398 bytes.
+   0.776 Checksum for script /home/factorio/factorio-linux-server/server/factorio/temp/currently-playing/control.lua: 1735894310
+   0.777 Info UDPSocket.cpp:27: Opening socket at (IP ADDR:({0.0.0.0:21377}))
+   0.777 Hosting game at IP ADDR:({0.0.0.0:21377})
+   0.777 Info ServerMultiplayerManager.cpp:780: updateTick(692) changing state from(CreatingGame) to(InGame)
+   0.777 Info UDPSocket.cpp:39: Opening socket for broadcast
+   0.777 Info CommandLineMultiplayer.cpp:278: Maximum segment size = 100; minimum segment size = 25; maximum-segment-size peer count = 10; minimum-segment-size peer count = 20
+ 196.431 Received SIGINT, shutting down
+ 196.431 Quitting: signal.
+ 196.431 Info MainLoop.cpp:417: Saving map as /home/factorio/factorio-linux-server/server/factorio/data/saves/NEWONE.zip
+^C 196.479 Info MainLoop.cpp:428: Saving progress: 0.229885%
+ 196.484 Info MainLoop.cpp:428: Saving progress: 100.000000%
+ 196.509 Info ServerMultiplayerManager.cpp:113: Disconnecting multiplayer connection.
+ 196.509 Info ServerMultiplayerManager.cpp:780: updateTick(692) changing state from(InGame) to(DisconnectingScheduled)
+ 196.543 Info ServerMultiplayerManager.cpp:780: updateTick(692) changing state from(DisconnectingScheduled) to(Disconnecting)
+ 196.576 Info ServerMultiplayerManager.cpp:780: updateTick(692) changing state from(Disconnecting) to(Disconnected)
+ 196.576 Info ServerMultiplayerManager.cpp:140: Quitting multiplayer connection.
+ 196.576 Info ServerMultiplayerManager.cpp:780: updateTick(692) changing state from(Disconnected) to(Closed)
+ 196.636 Info UDPSocket.cpp:218: Closing socket
+ 196.636 Info UDPSocket.cpp:248: Socket closed
+ 196.636 Info UDPSocket.cpp:218: Closing socket
+ 196.673 Info UDPSocket.cpp:218: Closing socket
+ 196.673 Info UDPSocket.cpp:248: Socket closed
+ 196.720 Goodbye
+   0.000 2024-10-19 17:41:58; Factorio 1.1.26 (build 58172, linux64, headless)
+   0.009 Operating system: Linux (Ubuntu 24.04)
+   0.009 Program arguments: "/home/factorio/factorio-linux-server/server/factorio/bin/x64/factorio" "--port" "21377" "--start-server" "/home/factorio/factorio-linux-server/server/factorio/data/saves/NEWONE.zip" "--server-settings" "/home/factorio/factorio-linux-server/server/factorio/data/server-settings.json" 
+   0.009 Read data path: /home/factorio/factorio-linux-server/server/factorio/data
+   0.009 Write data path: /home/factorio/factorio-linux-server/server/factorio [638/973MB]
+   0.009 Binaries path: /home/factorio/factorio-linux-server/server/factorio/bin
+   0.015 System info: [CPU: Intel(R) Xeon(R) CPU E3-1270 v6 @ 3.80GHz, 6 cores, RAM: 24032 MB]
+   0.015 Environment: DISPLAY=<unset> WAYLAND_DISPLAY=<unset> DESKTOP_SESSION=<unset> XDG_SESSION_DESKTOP=<unset> XDG_CURRENT_DESKTOP=<unset> __GL_FSAA_MODE=<unset> __GL_LOG_MAX_ANISO=<unset> __GL_SYNC_TO_VBLANK=<unset> __GL_SORT_FBCONFIGS=<unset> __GL_YIELD=<unset>
+   0.015 Running in headless mode
+   0.029 Loading mod core 0.0.0 (data.lua)
+   0.083 Loading mod base 1.1.26 (data.lua)
+   0.377 Loading mod base 1.1.26 (data-updates.lua)
+   0.513 Checksum for core: 217331212
+   0.513 Checksum of base: 3777792092
+   0.721 Prototype list checksum: 3034860339
+   0.768 Info PlayerData.cpp:71: Local player-data.json available, timestamp 1729352517
+   0.768 Info PlayerData.cpp:78: Cloud player-data.json unavailable
+   0.771 Factorio initialised
+   0.771 Info ServerSynchronizer.cpp:29: nextHeartbeatSequenceNumber(0) initialized Synchronizer nextTickClosureTick(0).
+   0.771 Info ServerMultiplayerManager.cpp:780: updateTick(4294967295) changing state from(Ready) to(PreparedToHostGame)
+   0.771 Info ServerMultiplayerManager.cpp:780: updateTick(4294967295) changing state from(PreparedToHostGame) to(CreatingGame)
+   0.771 Loading map /home/factorio/factorio-linux-server/server/factorio/data/saves/NEWONE.zip: 788284 bytes.
+   0.788 Loading level.dat: 1441907 bytes.
+   0.793 Info Scenario.cpp:197: Map version 1.1.26-0
+   0.831 Loading script.dat: 398 bytes.
+   0.836 Checksum for script /home/factorio/factorio-linux-server/server/factorio/temp/currently-playing/control.lua: 1735894310
+   0.837 Info UDPSocket.cpp:27: Opening socket at (IP ADDR:({0.0.0.0:21377}))
+   0.837 Hosting game at IP ADDR:({0.0.0.0:21377})
+   0.837 Info ServerMultiplayerManager.cpp:780: updateTick(692) changing state from(CreatingGame) to(InGame)
+   0.838 Info UDPSocket.cpp:39: Opening socket for broadcast
+   0.838 Info CommandLineMultiplayer.cpp:278: Maximum segment size = 100; minimum segment size = 25; maximum-segment-size peer count = 10; minimum-segment-size peer count = 20
+^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^C 462.438 Received SIGINT, shutting down
+ 462.438 Quitting: signal.
+ 462.438 Info MainLoop.cpp:417: Saving map as /home/factorio/factorio-linux-server/server/factorio/data/saves/NEWONE.zip
+ 462.503 Info MainLoop.cpp:428: Saving progress: 0.229885%
+ 462.507 Info MainLoop.cpp:428: Saving progress: 100.000000%
+ 462.538 Info ServerMultiplayerManager.cpp:113: Disconnecting multiplayer connection.
+ 462.538 Info ServerMultiplayerManager.cpp:780: updateTick(692) changing state from(InGame) to(DisconnectingScheduled)
+ 462.571 Info ServerMultiplayerManager.cpp:780: updateTick(692) changing state from(DisconnectingScheduled) to(Disconnecting)
+ 462.606 Info ServerMultiplayerManager.cpp:780: updateTick(692) changing state from(Disconnecting) to(Disconnected)
+ 462.606 Info ServerMultiplayerManager.cpp:140: Quitting multiplayer connection.
+ 462.606 Info ServerMultiplayerManager.cpp:780: updateTick(692) changing state from(Disconnected) to(Closed)
+ 462.680 Info UDPSocket.cpp:218: Closing socket
+ 462.680 Info UDPSocket.cpp:248: Socket closed
+ 462.680 Info UDPSocket.cpp:218: Closing socket
+ 462.704 Info UDPSocket.cpp:218: Closing socket
+ 462.704 Info UDPSocket.cpp:248: Socket closed
+ 462.778 Goodbye
+   0.000 2024-10-19 17:49:41; Factorio 1.1.26 (build 58172, linux64, headless)
+   0.010 Operating system: Linux (Ubuntu 24.04)
+   0.011 Program arguments: "/home/factorio/factorio-linux-server/server/factorio/bin/x64/factorio" "--port" "21377" "--start-server" "/home/factorio/factorio-linux-server/server/factorio/data/saves/NEWONE.zip" "--server-settings" "/home/factorio/factorio-linux-server/server/factorio/data/server-settings.json" 
+   0.011 Read data path: /home/factorio/factorio-linux-server/server/factorio/data
+   0.011 Write data path: /home/factorio/factorio-linux-server/server/factorio [638/973MB]
+   0.011 Binaries path: /home/factorio/factorio-linux-server/server/factorio/bin
+   0.023 System info: [CPU: Intel(R) Xeon(R) CPU E3-1270 v6 @ 3.80GHz, 6 cores, RAM: 23932 MB]
+   0.023 Environment: DISPLAY=<unset> WAYLAND_DISPLAY=<unset> DESKTOP_SESSION=<unset> XDG_SESSION_DESKTOP=<unset> XDG_CURRENT_DESKTOP=<unset> __GL_FSAA_MODE=<unset> __GL_LOG_MAX_ANISO=<unset> __GL_SYNC_TO_VBLANK=<unset> __GL_SORT_FBCONFIGS=<unset> __GL_YIELD=<unset>
+   0.023 Running in headless mode
+   0.038 Loading mod core 0.0.0 (data.lua)
+   0.123 Loading mod base 1.1.26 (data.lua)
+   0.619 Loading mod base 1.1.26 (data-updates.lua)
+   0.849 Checksum for core: 217331212
+   0.849 Checksum of base: 3777792092
+   1.147 Prototype list checksum: 3034860339
+   1.200 Info PlayerData.cpp:71: Local player-data.json available, timestamp 1729352980
+   1.200 Info PlayerData.cpp:78: Cloud player-data.json unavailable
+   1.202 Factorio initialised
+   1.203 Info ServerSynchronizer.cpp:29: nextHeartbeatSequenceNumber(0) initialized Synchronizer nextTickClosureTick(0).
+   1.203 Info ServerMultiplayerManager.cpp:780: updateTick(4294967295) changing state from(Ready) to(PreparedToHostGame)
+   1.203 Info ServerMultiplayerManager.cpp:780: updateTick(4294967295) changing state from(PreparedToHostGame) to(CreatingGame)
+   1.203 Loading map /home/factorio/factorio-linux-server/server/factorio/data/saves/NEWONE.zip: 788284 bytes.
+   1.215 Loading level.dat: 1441907 bytes.
+   1.220 Info Scenario.cpp:197: Map version 1.1.26-0
+   1.247 Loading script.dat: 398 bytes.
+   1.250 Checksum for script /home/factorio/factorio-linux-server/server/factorio/temp/currently-playing/control.lua: 1735894310
+   1.251 Info UDPSocket.cpp:27: Opening socket at (IP ADDR:({0.0.0.0:21377}))
+   1.251 Hosting game at IP ADDR:({0.0.0.0:21377})
+   1.251 Info ServerMultiplayerManager.cpp:780: updateTick(692) changing state from(CreatingGame) to(InGame)
+   1.251 Info UDPSocket.cpp:39: Opening socket for broadcast
+   1.251 Info CommandLineMultiplayer.cpp:278: Maximum segment size = 100; minimum segment size = 25; maximum-segment-size peer count = 10; minimum-segment-size peer count = 20

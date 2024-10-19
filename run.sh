@@ -1,12 +1,14 @@
 #!/bin/bash
+pwd
+if [ $1 ]; then cd $1; fi
 
-factorioTar="factorio.tar.xz"
-factorioBin="server/factorio/bin/x64/factorio"
-factorioSource="https://factorio.com/get-download/latest/headless/linux64"
+date
+
+source config.sh
 
 function backupFactorio() {
     echo "Backing up Factorio"
-    (tar -cf $factorioTar -C server factorio)
+    (tar -cf $factorioTar -C $serverPath factorio)
 }
 
 if [ ! -f $factorioBin ]; then
@@ -15,7 +17,7 @@ if [ ! -f $factorioBin ]; then
         (wget -nc $factorioSource -O $factorioTar)
     fi
     echo "Unpacking Factorio"
-    (tar --keep-newer-files -xf $factorioTar -C server)
+    (tar --keep-newer-files -xf $factorioTar -C $serverPath)
 else
     (backupFactorio)
 fi
@@ -23,14 +25,14 @@ fi
 function checkUpdate() {
     local addTo=""
 
-    if [ $1 ] ; then 
-        addTo=$1
-    fi
+    if [ $1 ] ; then addTo=$1; fi
 
-    echo $addTo
+    if $experimental; then addTo+=" -x "; fi
 
-    #(python3 update_factorio.py $addTo -xDO server --for-version 1.1.109)
-    (python3 update_factorio.py $addTo -xDO server -a $factorioBin)
+    echo "Extra parameters $addTo"
+
+    #(python3 update_factorio.py $addTo -DO $serverPath --for-version 1.1.109)
+    (python3 update_factorio.py $addTo -DO $serverPath -a $factorioBin)
 
     return $?
 }
@@ -47,6 +49,7 @@ if [ $ret == 0 ]; then
 
     # Wait until the service is fully stopped
     echo "Waiting for Factorio service to stop..."
+
     MAX_WAIT=600
     WAIT_INTERVAL=5
     WAIT_TIME=0
@@ -61,16 +64,22 @@ if [ $ret == 0 ]; then
     done
     echo "Factorio service stopped."
 
+    checkUpdate
+
     # Apply the update
-    while (checkUpdate); do
-        echo "Factorio updated"
+    while (checkUpdate -d); do
+        checkUpdate
     done
 
     # Start the Factorio service
     systemctl start factorio
     echo "Factorio server updated and restarted."
 else
-    echo "No new Factorio version available"
+    if systemctl is-active --quiet factorio; then
+        echo "No new Factorio version available"
+    else
+        sudo systemctl start factorio
+    fi
 fi
 
 echo $ret

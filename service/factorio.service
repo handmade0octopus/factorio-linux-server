@@ -1,0 +1,16 @@
+[Unit]
+Description=Factorio Headless Server
+After=network.target
+
+[Service]
+Type=simple
+User=factorio
+Group=factorio
+WorkingDirectory=/path/to/factorio
+ExecStart=/path/to/factorio/bin/x64/factorio --start-server-load-latest --server-settings /path/to/factorio/data/server-settings.json
+ExecStop=/bin/kill -s SIGINT $MAINPID
+TimeoutStopSec=600
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

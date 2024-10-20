@@ -3,6 +3,8 @@ currentPath=$(pwd)
 if [ ! -f config.sh ]; then
     cp config.example.sh config.sh
     chmod +x config.sh
+    echo "Edit config.sh first"
+    exit 1
 fi
 
 newPath="/opt/factorio"
@@ -26,6 +28,7 @@ cd $newPath
 source config.sh $newPath
 
 sudo mkdir -pm 777 $serverPath
+sudo rm -fr $serverPath/*
 
 if !(id -u $user); then
     echo "User created"
@@ -67,10 +70,9 @@ downloadFactorio
 sudo cp -nr $currentPath/factorio/ $serverPath
 sudo chown -R factorio:factorio $newPath
 
-#sudo su $user -c
-#sudo runuser $user -c "screen -S screenName -D -m $factorioBin --port $port --start-server-load-latest --server-settings $serverPath/factorio/data/server-settings.json"
-#sudo runuser $user -c "screen -S screenName -L -Logfile $workingDirectory/log.txt -D -m $factorioBin --port $port --start-server $serverPath/factorio/data/saves/NEWONE.zip --server-settings $serverPath/factorio/data/server-settings.json"
-#exit 1
+sudo systemctl stop   factorio.service
+sudo systemctl stop   factorio-update.timer
+sudo systemctl stop   factorio-update.service
 
 factorioServiceStr="[Unit]
 Description=Factorio Headless Server
@@ -107,6 +109,9 @@ After=network-online.target
 Type=oneshot
 ExecStart=screen -S factorioUpdaterConsole -L -Logfile $workingDirectory/factorioUpdater.log -D -m $workingDirectory/run.sh $workingDirectory
 RuntimeMaxSec=100s
+
+[Install]
+WantedBy=multi-user.target
 "
 
 sudo sh -c "echo '$factorioUpdateServiceStr' > /etc/systemd/system/factorio-update.service"
@@ -127,9 +132,6 @@ WantedBy=timers.target
 sudo sh -c "echo '$factorioUpdateTimerStr' > /etc/systemd/system/factorio-update.timer"
 
 sudo sudo systemctl daemon-reload
-sudo systemctl stop   factorio.service
-sudo systemctl stop   factorio-update.timer
-sudo systemctl stop   factorio-update.service
 sudo systemctl enable factorio-update.service
 sudo systemctl enable factorio-update.timer
 sudo systemctl start --no-block factorio-update.service

@@ -1,5 +1,5 @@
 # Factorio Linux Server
-Simple factorio Linux server to run from single script.
+Simple factorio Linux server for Ubuntu to run from single script.
 
 It downloads latest factorio server or rebuilds from user provided setup. Then setups systemd for factorio and setups auto-update script to be run on timer.
 
@@ -16,6 +16,8 @@ Copy your factorio settings (preserving folder structure) into `factorio` folder
 Then run `./install.sh [param]` deafult `[param] = /opt/factorio` it also installs all dependencies, creates user and runs services.
 
 After installation everything will work also on system restarts.
+
+You can also download server manually or pack your current one into `factorio.tar.xz` it will be copied before everything else.
 
 # Usage
 

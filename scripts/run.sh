@@ -1,23 +1,15 @@
 #!/bin/bash
-pwd
 if [ $1 ]; then cd $1; fi
 
+echo "_________________"
 date
 
-source config.sh
-
-function backupFactorio() {
-    echo "Backing up Factorio"
-    (tar -cf $factorioTar -C $serverPath factorio)
-}
+thisPath=$(pwd)
+source config.sh $thisPath
 
 if [ ! -f $factorioBin ]; then
-    if [ ! -f $factorioTar ]; then
-        echo "Downloading Factorio"
-        (wget -nc $factorioSource -O $factorioTar)
-    fi
-    echo "Unpacking Factorio"
-    (tar --keep-newer-files -xf $factorioTar -C $serverPath)
+    (downloadFactorio)
+    (unpackFactorio)
 else
     (backupFactorio)
 fi
@@ -78,7 +70,7 @@ else
     if systemctl is-active --quiet factorio; then
         echo "No new Factorio version available"
     else
-        sudo systemctl start factorio
+        systemctl start factorio
     fi
 fi
 

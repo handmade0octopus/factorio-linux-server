@@ -1,11 +1,31 @@
 #!/bin/bash
-if [ ! -f config.sh ]; then cp config.example.sh config.sh; fi
-source config.sh
+currentPath=$(pwd)
+if [ ! -f config.sh ]; then
+    cp config.example.sh config.sh
+    chmod +x config.sh
+fi
 
-sudo apt install python3
-sudo apt install python3-requests
+newPath="/opt/factorio"
+if [ $1 ]; then newPath=$1; fi
 
-sudo mkdir -m 777 $serverPath
+echo "Installing factorio in: $newPath"
+
+#sudo apt -qq update
+sudo apt -qq install -y python3
+sudo apt -qq install -y python3-requests
+sudo apt -qq install -y wget
+sudo apt -qq install -y conspy
+
+sudo mkdir -pm 777 $newPath
+
+sudo cp -r $currentPath/scripts/* $newPath
+sudo cp -f $currentPath/config.sh $newPath/config.sh
+sudo cp -f $currentPath/factorio.tar.xz $newPath/factorio.tar.xz
+
+cd $newPath
+source config.sh $newPath
+
+sudo mkdir -pm 777 $serverPath
 
 if !(id -u $user); then
     echo "User created"
@@ -13,9 +33,6 @@ if !(id -u $user); then
 else
     echo "$user user exists"
 fi
-
-sudo chown -R $user:$group $serverPath/factorio
-#sudo chown -R factorio:factorio $serverPath/factorio
 
 function zram() {
     if [ $1 ] && [ -d $1 ]; then
@@ -42,9 +59,13 @@ function zram() {
     fi
 }
 
-if [ $zramOn != 0 ]; then 
+if $zramOn; then 
     zram $serverPath
 fi
+
+downloadFactorio
+sudo cp -nr $currentPath/factorio/ $serverPath
+sudo chown -R factorio:factorio $newPath
 
 #sudo su $user -c
 #sudo runuser $user -c "screen -S screenName -D -m $factorioBin --port $port --start-server-load-latest --server-settings $serverPath/factorio/data/server-settings.json"
@@ -59,11 +80,15 @@ After=network.target
 Type=simple
 User=$user
 Group=$group
+StandardInput=tty-force
+TTYVHangup=yes
+TTYPath=/dev/tty20
+TTYReset=yes
 WorkingDirectory=$serverPath/factorio
-ExecStart=screen -S factorioConsole -L -Logfile $workingDirectory/factorio.log -D -m $factorioBin --port $port --start-server-load-latest --server-settings $serverPath/factorio/data/server-settings.json
-ExecStop=/bin/kill -s SIGINT $MAINPID
-TimeoutStopSec=600
-Restart=on-failure
+ExecStart=$factorioBin --port $port --start-server-load-latest --server-settings $serverPath/factorio/data/server-settings.json
+TimeoutStopSec=100s
+Restart=always
+RestartSec=120s
 
 [Install]
 WantedBy=multi-user.target"
@@ -81,6 +106,7 @@ After=network-online.target
 [Service]
 Type=oneshot
 ExecStart=screen -S factorioUpdaterConsole -L -Logfile $workingDirectory/factorioUpdater.log -D -m $workingDirectory/run.sh $workingDirectory
+RuntimeMaxSec=100s
 "
 
 sudo sh -c "echo '$factorioUpdateServiceStr' > /etc/systemd/system/factorio-update.service"
@@ -101,8 +127,10 @@ WantedBy=timers.target
 sudo sh -c "echo '$factorioUpdateTimerStr' > /etc/systemd/system/factorio-update.timer"
 
 sudo sudo systemctl daemon-reload
+sudo systemctl stop   factorio.service
+sudo systemctl stop   factorio-update.timer
+sudo systemctl stop   factorio-update.service
+sudo systemctl enable factorio-update.service
 sudo systemctl enable factorio-update.timer
-sudo systemctl start factorio-update.timer
-sudo systemctl start factorio-update.service
-
-#screen -r factorioUpdaterConsole
+sudo systemctl start --no-block factorio-update.service
+sudo systemctl start --no-block factorio-update.timer

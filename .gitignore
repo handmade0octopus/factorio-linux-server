@@ -2,6 +2,7 @@
 .vscode
 service
 server
+factorio
 *.tar.xz
 *.log
 config.sh

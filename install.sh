@@ -20,12 +20,13 @@ sudo apt -qq install -y conspy
 
 sudo mkdir -pm 777 $newPath
 
-sudo cp -r $currentPath/scripts/* $newPath
-sudo cp -f $currentPath/config.sh $newPath/config.sh
-sudo cp -f $currentPath/factorio.tar.xz $newPath/factorio.tar.xz
-
 cd $newPath
 source config.sh $newPath
+
+sudo cp -fr $currentPath/scripts/* $newPath
+sudo cp -f $currentPath/config.sh $newPath/config.sh
+sudo $currentPath/stop.sh $newPath
+sudo cp -f $currentPath/factorio.tar.xz $newPath/factorio.tar.xz
 
 sudo mkdir -pm 777 $serverPath
 sudo rm -fr $serverPath/*
@@ -69,10 +70,6 @@ fi
 downloadFactorio
 sudo cp -nr $currentPath/factorio/ $serverPath
 sudo chown -R factorio:factorio $newPath
-
-sudo systemctl stop   factorio.service
-sudo systemctl stop   factorio-update.timer
-sudo systemctl stop   factorio-update.service
 
 factorioServiceStr="[Unit]
 Description=Factorio Headless Server
@@ -132,7 +129,8 @@ WantedBy=timers.target
 sudo sh -c "echo '$factorioUpdateTimerStr' > /etc/systemd/system/factorio-update.timer"
 
 sudo sudo systemctl daemon-reload
-sudo systemctl enable factorio-update.service
-sudo systemctl enable factorio-update.timer
-sudo systemctl start --no-block factorio-update.service
-sudo systemctl start --no-block factorio-update.timer
+sudo $currentPath/start.sh
+#sudo systemctl enable factorio-update.service
+#sudo systemctl enable factorio-update.timer
+#sudo systemctl start --no-block factorio-update.service
+#sudo systemctl start --no-block factorio-update.timer

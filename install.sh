@@ -23,6 +23,11 @@ sudo mkdir -pm 777 $newPath
 cd $newPath
 source config.sh $newPath
 
+if [ $serverPath -lt 2 ]; then
+    echo "Server path is wrong: $serverPath"
+    exit 1
+fi
+
 sudo cp -fr $currentPath/scripts/* $newPath
 sudo cp -f $currentPath/config.sh $newPath/config.sh
 sudo $currentPath/stop.sh $newPath

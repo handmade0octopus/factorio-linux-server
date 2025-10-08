@@ -26,6 +26,7 @@ sudo apt -qq install -y python3
 sudo apt -qq install -y python3-requests 
 sudo apt -qq install -y wget             
 sudo apt -qq install -y conspy           
+sudo apt -qq install -y screen           
 
 sudo mkdir -pm 777 $newPath
 

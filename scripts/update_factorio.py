@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
 
 import os, posixpath, requests, re, sys
+import tempfile
 import argparse
 import json
 import subprocess
+import time
 from zipfile import ZipFile
 import urllib.parse as url_parse
+import time
 
 
 def file_path(string):
@@ -35,7 +38,7 @@ parser.add_argument('-p', '--package', default='core-linux_headless64',
 parser.add_argument('-f', '--for-version',
                     help="Which Factorio version you currently have, e.g., '0.12.2'. If empty, "
                     "query the Factorio binary given in '--apply-to' for its version.")
-parser.add_argument('-O', '--output-path', default='/tmp',
+parser.add_argument('-O', '--output-path', default=tempfile.gettempdir(),
                     help="Where to put downloaded files.")
 parser.add_argument('-a', '--apply-to', type=file_path, dest='apply_to',
                     help="Apply the updates using the chosen binary.")
@@ -163,13 +166,33 @@ def fetch_update(output_path, url, ignore_existing_files, verify_zip):
             return fpath # early out, we must've already downloaded it
 
     r = requests.get(url, stream=True)
+
+    total_size = int(r.headers.get('content-length', 0)) # get content length
+    downloaded_size = 0
+    bar_width = 50     # could use os.get_terminal_size().columns to adapt the screen width
+    start_time = time.time()  # time of start download
     with open(fpath, 'wb') as fd:
         for chunk in r.iter_content(8192):
-            fd.write(chunk)
+            if chunk:
+                fd.write(chunk)
+                downloaded_size += len(chunk)
+
+                # calculate download speed
+                elapsed_time = time.time() - start_time
+                if elapsed_time > 0:
+                    download_speed = downloaded_size / elapsed_time
+
+            if total_size == 0:
+                bar_block = 0
+            else:
+                bar_block = int(bar_width * downloaded_size / total_size)
+
+            print(f"\r[{'█' * bar_block}{' ' * (bar_width - bar_block)}] {downloaded_size / 2 ** 20:.2f}/{total_size / 2 ** 20:.2f} MiB  {download_speed / 2 ** 20:.2f} MiB/s", end='')
 
         fd.flush()
         fd.seek(0, os.SEEK_SET)
 
+        print("\nDownload Success")
         if verify_zip:
             if not zip_valid(fd):
                 raise RuntimeError('Downloaded file %s was not a valid zip file' % fpath)
@@ -231,6 +254,14 @@ def apply_update(args, update):
     print("Applying update with `%s`." % (" ".join(update_args)))
     verbose_aware_exec(update_args, args.verbose)
 
+    if os.name == "nt":
+        from psutil import process_iter
+
+        print("Waiting for slave process to exit...")
+        while any(p.name() == "Factorio.exe" for p in process_iter()):
+            # Slave process is still running
+            time.sleep(0.5)
+
     if args.delete_after_apply:
         print('Update applied, deleting temporary file %s.' % fpath)
         os.unlink(fpath)
@@ -280,6 +311,7 @@ def main():
 
     if not updates:
         announce_no_updates(args, for_version, latest)
+        # changed to not break update scripts
         return 2
 
     for u in updates:

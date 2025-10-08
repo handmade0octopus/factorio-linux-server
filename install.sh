@@ -7,24 +7,43 @@ if [ ! -f config.sh ]; then
     exit 1
 fi
 
+echo "Current path: $currentPath"
+
 newPath="/opt/factorio"
 if [ $1 ]; then newPath=$1; fi
+
+if [[ $newPath = \/* ]]; then
+    echo "Using absolute path: $newPath"
+else
+    newPath="$currentPath/$newPath"
+    echo "Using relative path: $newPath"
+fi
 
 echo "Installing factorio in: $newPath"
 
 #sudo apt -qq update
-sudo apt -qq install -y python3
-sudo apt -qq install -y python3-requests
-sudo apt -qq install -y wget
-sudo apt -qq install -y conspy
+sudo apt -qq install -y python3          
+sudo apt -qq install -y python3-requests 
+sudo apt -qq install -y wget             
+sudo apt -qq install -y conspy           
 
 sudo mkdir -pm 777 $newPath
 
-cd $newPath
+cp $currentPath/config.sh $newPath/config.sh
 source config.sh $newPath
 
-if [ $serverPath -lt 2 ]; then
+if [ ${#serverPath} -lt 2 ]; then
     echo "Server path is wrong: $serverPath"
+    exit 1
+fi
+
+
+echo "Continue install in $serverPath ? (y/n)"
+read answer
+if [ "$answer" != "${answer#[Yy]}" ] ;then
+    echo "Continuing install"
+else
+    echo "Exiting install"
     exit 1
 fi
 
@@ -73,7 +92,7 @@ if $zramOn; then
 fi
 
 downloadFactorio
-sudo cp -nr $currentPath/factorio/ $serverPath
+sudo cp --update=none -r $currentPath/factorio/ $serverPath
 sudo chown -R factorio:factorio $newPath
 
 factorioServiceStr="[Unit]
@@ -98,7 +117,6 @@ RestartSec=120s
 WantedBy=multi-user.target"
 
 sudo sh -c "echo '$factorioServiceStr' > /etc/systemd/system/factorio.service"
-
 
 
 factorioUpdateServiceStr="
